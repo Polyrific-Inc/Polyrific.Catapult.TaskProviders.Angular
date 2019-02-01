@@ -39,7 +39,7 @@ namespace Polyrific.Catapult.Plugins.Angular
 
     private Task GenerateCode(string projectName, string outputLocation)
     {
-      // should you run t
+      // if this code is run in linux/mac, change the "powershell" into "pwsh" and the arguments should be $"-c \"ng new {projectName.Kebaberize()} --skipGit=true --skipInstall=true\""
       var info = new ProcessStartInfo("powershell")
       {
           UseShellExecute = false,
