@@ -32,12 +32,12 @@ namespace Polyrific.Catapult.Plugins.Angular
       
       Config.OutputLocation = Config.OutputLocation ?? Config.WorkingLocation;
 
-      await GenerateCode(ProjectName, projectTitle, Config.OutputLocation);
+      await GenerateCode(ProjectName, Config.OutputLocation);
 
       return (Config.OutputLocation, null, "");        
     }
 
-    private Task GenerateCode(string projectName, string projectTitle, string outputLocation)
+    private Task GenerateCode(string projectName, string outputLocation)
     {
       // should you run t
       var info = new ProcessStartInfo("powershell")
