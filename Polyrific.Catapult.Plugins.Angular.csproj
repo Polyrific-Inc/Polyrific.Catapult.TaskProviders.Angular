@@ -10,5 +10,16 @@
     <PackageReference Include="Humanizer.Core" Version="2.5.16" />
     <PackageReference Include="Polyrific.Catapult.Plugins.Core" Version="1.0.0-beta1-15556" />
   </ItemGroup>
+    
+  <ItemGroup>
+    <Compile Remove="Template\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="Template\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 
 </Project>
