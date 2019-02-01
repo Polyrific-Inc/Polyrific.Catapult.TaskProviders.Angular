@@ -1,0 +1,11 @@
+{       
+    "configurations": [
+        {
+        "name": "Launch",
+        "type": "coreclr",
+        "request": "launch",
+        "program": "${workspaceFolder}/bin/Debug/netcoreapp2.1/MyCodeGenerator.dll",
+        "preLaunchTask": "build",
+        "args": "--file \"Absolute\\Path\\To\\CodeGeneratorProviderTest.json\""
+    }]
+}
