@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Humanizer;
@@ -10,8 +10,11 @@ namespace Polyrific.Catapult.Plugins.Angular
 {
   class Program : CodeGeneratorProvider
   {
+    private readonly CodeGenerator _codeGenerator;
+
     public Program(string[] args) : base(args)
     {
+      _codeGenerator = new CodeGenerator(Logger);
     }
 
     public override string Name => "Polyrific.Catapult.Plugins.Angular";
@@ -28,35 +31,16 @@ namespace Polyrific.Catapult.Plugins.Angular
     {
       string projectTitle = ProjectName.Humanize(); // set the default title to project name
       if (AdditionalConfigs != null && AdditionalConfigs.ContainsKey("Title") && !string.IsNullOrEmpty(AdditionalConfigs["Title"]))
-          projectTitle = AdditionalConfigs["Title"];
+        projectTitle = AdditionalConfigs["Title"];
       
       Config.OutputLocation = Config.OutputLocation ?? Config.WorkingLocation;
 
-      await GenerateCode(ProjectName, projectTitle, Config.OutputLocation);
+      var error = await _codeGenerator.Generate(ProjectName, projectTitle, Config.OutputLocation, Models);
+
+      if (!string.IsNullOrEmpty(error))
+        return ("", null, error);
 
       return (Config.OutputLocation, null, "");        
-    }
-
-    private Task GenerateCode(string projectName, string projectTitle, string outputLocation)
-    {
-      // should you run t
-      var info = new ProcessStartInfo("powershell")
-      {
-          UseShellExecute = false,
-          Arguments = $"ng new {projectName.Kebaberize()} --skipGit=true --skipInstall=true",
-          RedirectStandardInput = true,
-          RedirectStandardOutput = true,
-          RedirectStandardError = true,
-          CreateNoWindow = true,
-          WorkingDirectory = outputLocation
-      };
-
-      using (var process = Process.Start(info))
-      {
-        process.WaitForExit();
-      }
-
-      return Task.CompletedTask;
     }
   }
 }
