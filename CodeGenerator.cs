@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Humanizer;
 using Microsoft.Extensions.Logging;
-using Polyrific.Catapult.Plugins.Angular.Helpers;
+using Polyrific.Catapult.TaskProviders.Angular.Helpers;
 using Polyrific.Catapult.Shared.Dto.Constants;
 using Polyrific.Catapult.Shared.Dto.ProjectDataModel;
 
-namespace Polyrific.Catapult.Plugins.Angular
+namespace Polyrific.Catapult.TaskProviders.Angular
 {
     public class CodeGenerator
     {
