@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
-namespace Polyrific.Catapult.Plugins.Angular.Helpers
+namespace Polyrific.Catapult.TaskProviders.Angular.Helpers
 {
     public static class CommandHelper
     {
