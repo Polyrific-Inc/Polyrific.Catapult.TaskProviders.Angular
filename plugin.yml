@@ -1,0 +1,11 @@
+name: 'Polyrific.Catapult.TaskProviders.Angular'
+type: 'GeneratorProvider'
+author: 'Polyrific'
+version: '1.0.0'
+additional-configs:
+  - name: Title
+    label: Title
+    hint: The website title
+    type: string
+    is-required: false
+    is-secret: false
