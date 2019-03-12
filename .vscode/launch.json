@@ -4,7 +4,7 @@
         "name": "Launch",
         "type": "coreclr",
         "request": "launch",
-        "program": "${workspaceFolder}/bin/Debug/netcoreapp2.1/Polyrific.Catapult.Plugins.Angular.dll",
+        "program": "${workspaceFolder}/bin/Debug/netcoreapp2.1/Polyrific.Catapult.TaskProviders.Angular.dll",
         "preLaunchTask": "build",
         "args": "--file \"Absolute\\Path\\To\\CodeGeneratorProviderTest.json\""
     }]
