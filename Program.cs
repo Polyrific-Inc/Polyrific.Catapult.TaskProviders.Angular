@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Humanizer;
-using Polyrific.Catapult.Plugins.Core;
+using Polyrific.Catapult.TaskProviders.Core;
 
-namespace Polyrific.Catapult.Plugins.Angular
+namespace Polyrific.Catapult.TaskProviders.Angular
 {
   class Program : CodeGeneratorProvider
   {
@@ -14,7 +14,7 @@ namespace Polyrific.Catapult.Plugins.Angular
     {
     }
 
-    public override string Name => "Polyrific.Catapult.Plugins.Angular";
+    public override string Name => "Polyrific.Catapult.TaskProviders.Angular";
 
     static async Task Main(string[] args)
     {
